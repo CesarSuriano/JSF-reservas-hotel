@@ -4,20 +4,21 @@ import java.io.Serializable;
 import java.lang.String;
 import java.util.Date;
 import javax.persistence.*;
+import modelo.Pessoa;
 
 /**
  * Entity implementation class for Entity: PessoaFisica
  *
  */
 @Entity
-
-public class PessoaFisica implements Serializable {
-
+@DiscriminatorValue("PF")
+public class PessoaFisica extends Pessoa implements Serializable {
+	private static final long serialVersionUID = 1L;
 	
 	private String cpf;
 	private String rg;
 	private Date dataNascimento;
-	private static final long serialVersionUID = 1L;
+	private Sexo sexo;
 
 	public PessoaFisica() {
 		super();
@@ -35,13 +36,23 @@ public class PessoaFisica implements Serializable {
 
 	public void setRg(String rg) {
 		this.rg = rg;
-	}   
+	}
+	
+	@Temporal(TemporalType.DATE)
 	public Date getDataNascimento() {
 		return this.dataNascimento;
 	}
 
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
+	}
+	
+	@Enumerated(EnumType.STRING)
+	public Sexo getSexo() {
+		return sexo;
+	}
+	public void setSexo(Sexo sexo) {
+		this.sexo = sexo;
 	}
    
 }

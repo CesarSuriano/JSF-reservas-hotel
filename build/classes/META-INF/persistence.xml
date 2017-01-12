@@ -5,5 +5,10 @@
 		<class>modelo.PessoaJuridica</class>
 		<class>modelo.Endereco</class>
 		<class>modelo.Reserva</class>
+		<class>modelo.PessoaFisica</class>
+		<class>modelo.Diaria</class>
+		<class>modelo.DiariaReservada</class>
+		<class>modelo.Quarto</class>
+		<class>modelo.DiariaAvulsa</class>
 	</persistence-unit>
 </persistence>
